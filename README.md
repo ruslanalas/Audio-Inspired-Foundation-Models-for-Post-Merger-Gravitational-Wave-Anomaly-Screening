@@ -32,12 +32,12 @@ The pipeline processes real LIGO Livingston (L1) background noise injected with 
 
 
 2. Create a virtual environment and install dependencies:
-```bash
+   ```bash
    python -m venv env
    source env/bin/activate  # On Windows use `env\Scripts\activate`
    pip install -r requirements.txt
 
-```
+   ```
 
 
 
@@ -73,5 +73,3 @@ If you find this code useful in your research, please cite the associated prepri
   journal={arXiv preprint arXiv:XXXX.XXXXX},
   year={2026}
 }
-
-```
