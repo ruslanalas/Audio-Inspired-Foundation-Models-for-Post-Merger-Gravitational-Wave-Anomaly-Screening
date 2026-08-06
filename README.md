@@ -30,7 +30,6 @@ The pipeline processes real LIGO Livingston (L1) background noise injected with 
    git clone [https://github.com/your-username/gw-postmerger-ast.git](https://github.com/your-username/gw-postmerger-ast.git)
    cd gw-postmerger-ast
 
-```
 
 2. Create a virtual environment and install dependencies:
 ```bash
