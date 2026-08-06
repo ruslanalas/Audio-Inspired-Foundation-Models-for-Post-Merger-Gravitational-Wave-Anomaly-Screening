@@ -1,4 +1,4 @@
-# Audio-Inspired-Foundation-Models-for-Post-Merger-Gravitational-Wave-Anomaly-Screening
+# Audio-Inspired Foundation Models for Post-Merger Gravitational-Wave Anomaly Screening
 
 **Author:** Ruslan Alaskarov
 
@@ -29,3 +29,52 @@ The pipeline processes real LIGO Livingston (L1) background noise injected with 
    ```bash
    git clone [https://github.com/your-username/gw-postmerger-ast.git](https://github.com/your-username/gw-postmerger-ast.git)
    cd gw-postmerger-ast
+
+```
+
+2. Create a virtual environment and install dependencies:
+```bash
+python -m venv env
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+pip install -r requirements.txt
+
+```
+
+
+
+## Data Sourcing
+
+This pipeline evaluates injections against real non-stationary instrumental background. The real noise windows are fetched from the Gravitational Wave Open Science Center (GWOSC).
+
+* **Detector:** LIGO Livingston (L1)
+* **Anchor GPS Time:** 1187008882.4 (GW170817 reference)
+* **Sampling Rate:** Raw 16384 Hz resampled to 16000 Hz.
+
+The data fetch is handled automatically via the `gwpy` library within the dataset classes provided in the notebooks.
+
+## Reproducing the Paper Figures
+
+To guarantee exact reproducibility, a rigid `seed_everything(42)` protocol is enforced across all numpy, torch, and python random states.
+
+* **Figure 1 (1D vs 2D CNN Ablation) & Figure 2 (NLL Variance Collapse):**
+Run all cells in `notebooks/01_baseline_mc_dropout.ipynb`.
+* **Figure 3 (t-SNE Latent Space), Figure 4 (Stage 1 Degradation Test) & Figure 5 (Stage 2 Physics Anomaly Score):**
+Run all cells in `notebooks/02_ast_metric_learning.ipynb`.
+* **Table 1 (Two-Stage Pipeline Evaluation):**
+The precise threshold metrics and classification counts are printed to standard output at the end of `notebooks/02_ast_metric_learning.ipynb`.
+
+## Citation
+
+If you find this code useful in your research, please cite the associated preprint:
+
+```bibtex
+@article{alaskarov2026audio,
+  title={Audio-Inspired Foundation Models for Post-Merger Gravitational-Wave Anomaly Screening: A Two-Stage Metric Learning Approach},
+  author={Alaskarov, Ruslan},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2026}
+}
+
+```
+
+```
